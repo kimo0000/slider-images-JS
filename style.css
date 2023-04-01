@@ -1,0 +1,116 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.sliders {
+    background-color: #eee;
+    width: 50%;
+    height: 50%;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+}
+
+.sliders .slider {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.sliders .slider::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.sliders .slider img {
+    border-top-left-radius: 8px;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.bulles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.bulles .bullet {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 2px solid #777;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bulles .bullet.active {
+    background-color: #f39898;
+}
+
+.sliders i {
+    position: absolute;
+    padding: 8px;
+    font-size: 10px;
+    background-color: #f50;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    cursor: pointer;
+    transition: .3s;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0px);
+}
+
+.sliders i:hover {
+    background-color: gray;
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.sliders i:last-of-type {
+    left: 90%;
+    top: 50%;
+}
+
+@media (max-width: 768px) {
+    .sliders i {
+        display: none;
+    }
+}
+
